@@ -1,9 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const ProductManager = require("../controllers/product-manager-db.js");
-const CartManager = require("../controllers/cart-manager-db.js");
+const CartManager = require("../controllers/cart.controller.js");
+const ViewsController = require("../controllers/view.controller.js");
+const viewsController = new ViewsController();
+
 const productManager = new ProductManager();
-const cartManager = new CartManager();
+
 
 // Ruta para la vista de perfil y lista de productos combinada
 router.get("/products", async (req, res) => {
